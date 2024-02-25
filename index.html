@@ -1,0 +1,55 @@
+
+</html><!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <iframe title="Passagens" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=8977711e-da51-473d-9c0c-84418e374552&autoAuth=true&ctid=f25493ae-1c98-41d7-8a33-0be75f5fe603" frameborder="0" allowFullScreen="true"></iframe>
+    <iframe title="BI" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=0977321a-f8aa-4a9a-b14b-ee2e6fc016a6&autoAuth=true&ctid=f25493ae-1c98-41d7-8a33-0be75f5fe603" frameborder="0" allowFullScreen="true"></iframe>
+    <iframe title="PS" width="1140" height="541.25" src="https://app.powerbi.com/reportEmbed?reportId=43c28782-fefc-41b2-85de-d619e0db1624&autoAuth=true&ctid=f25493ae-1c98-41d7-8a33-0be75f5fe603" frameborder="0" allowFullScreen="true"></iframe>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var iframes = document.querySelectorAll('iframe');
+            var currentIndex = 0;
+
+            function toggleIframes() {
+                iframes[currentIndex].classList.remove('visible');
+                iframes[currentIndex].classList.add('hidden');
+
+                currentIndex = (currentIndex + 1) % iframes.length;
+
+                iframes[currentIndex].classList.remove('hidden');
+                iframes[currentIndex].classList.add('visible');
+            }
+
+            setInterval(toggleIframes, 30000);
+        });
+    </script>
+</body>
+</html>
